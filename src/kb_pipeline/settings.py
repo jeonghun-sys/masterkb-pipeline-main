@@ -16,6 +16,11 @@ class Settings(BaseSettings):
     environment: str = Field(default="local", alias="KB_PIPELINE_ENV")
     state_db: str = Field(default=".data/kb_pipeline.sqlite3", alias="KB_PIPELINE_STATE_DB")
     pipeline_webhook_token: str | None = Field(default=None, alias="PIPELINE_WEBHOOK_TOKEN")
+    monitoring_enabled: bool = Field(default=False, alias="MONITORING_ENABLED")
+    monitoring_slack_channel_id: str | None = Field(
+        default=None,
+        alias="MONITORING_SLACK_CHANNEL_ID",
+    )
 
     slack_bot_token: str | None = Field(default=None, alias="SLACK_BOT_TOKEN")
     noco_base_url: str = Field(default="https://mkt-nocodb.class101.net", alias="NOCO_BASE_URL")
@@ -42,7 +47,7 @@ class Settings(BaseSettings):
     )
 
     ocr_base_url: str = Field(
-        default="https://ocr-production-50e9.up.railway.app",
+        default="https://101chatbottest-main-production.up.railway.app",
         alias="OCR_BASE_URL",
     )
 
